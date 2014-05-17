@@ -1,0 +1,26 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+@import "compass";
+@import "compass/reset";
+
+// ---------------------------------------------------------------------------
+// Basic Grid and Layout
+
+/*==== Susy Parameter ====*/
+
+$total-columns  : 12;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+$show-grid-backgrounds  : true;
+
+
+/*==== Break Point ====*/
+
+$small-medium-point:	42em;
+$medium-large-point:	65em;
+
+/*==== Layout ====*/
+$container-max-width: 59em;

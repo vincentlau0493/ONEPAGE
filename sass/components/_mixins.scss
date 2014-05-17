@@ -1,0 +1,29 @@
+//-----------------------------------
+//----------Media Query
+
+@mixin breakpoint($point,$point-value) {
+	@if $point == small{
+		 @media screen and (max-width: $point-value) {
+		 	@content;
+		 }
+	}
+	@if $point == medium {
+		@media screen and (min-width: $point-value) {
+			@content;
+		}
+	}	
+	@if $point == large {
+		@media screen and (min-width: $point-value) {
+			@content;
+		}
+	}
+}
+
+
+//-----------------------------------
+//----------Layout Mixins
+@mixin make-row($gutter: $gutter-width) {
+  margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);
+  @include clearfix;
+}

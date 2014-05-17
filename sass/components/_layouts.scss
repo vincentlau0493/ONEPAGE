@@ -1,0 +1,85 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "variables";
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+
+* {
+	box-sizing:border-box;
+}
+
+.container {
+  @include container;
+  max-width: $container-max-width;
+  
+}
+
+.grid {
+	@include susy-grid-background;
+}
+
+
+// Small Size Grid
+@include breakpoint(small,$small-medium-point) {
+	@for $i from 1 through $total-columns {
+		.s-col-#{$i} {
+			@include span-columns($i,$total-columns);
+		}
+	}
+}
+
+
+// Medium Size Grid
+@include breakpoint(medium,$small-medium-point) {	
+	@for $i from 1 through $total-columns {
+		.m-col-#{$i} {
+			@include span-columns($i,$total-columns);
+		}
+	}
+}
+
+// Large Size Grid
+@include breakpoint(large,$medium-large-point) {	
+	@for $i from 1 through $total-columns {
+		.l-col-#{$i}-end {
+			@include span-columns($i omega,$total-columns);
+		}
+	}
+}
+
+// Small Size Grid
+@include breakpoint(small,$small-medium-point) {
+	@for $i from 1 through $total-columns {
+		.s-col-#{$i}-end {
+			@include span-columns($i omega,$total-columns);
+		}
+	}
+}
+
+
+// Medium Size Grid
+@include breakpoint(medium,$small-medium-point) {	
+	@for $i from 1 through $total-columns {
+		.m-col-#{$i}-end {
+			@include span-columns($i omega,$total-columns);
+		}
+	}
+}
+
+// Large Size Grid
+@include breakpoint(large,$medium-large-point) {	
+	@for $i from 1 through $total-columns {
+		.l-col-#{$i} {
+			@include span-columns($i,$total-columns);
+		}
+	}
+}
+
+.row {
+	@include make-row;
+}
+
+
+
